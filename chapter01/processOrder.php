@@ -1,3 +1,11 @@
+<?php
+
+$tireQty = $_POST['tireqty'];
+$oilQty = $_POST['oilqty'];
+$sparkQty = $_POST['sparkqty'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +18,14 @@
     <h1>Bob's Auto Part</h1>
     <h2>Order Results</h2>
     <?php
-        echo '<p>Order Process.</p>';
+        echo '<p>Order Process at ';
+        echo date('H:i jS F Y') . '</p>';
+
+        echo '<p>Your orders as follows: </p>';
+        echo htmlspecialchars($tireQty) . ' ' . $tireQty > 1 ? 'tires' : 'tire' . '<br />';
+        echo htmlspecialchars($oilQty) . ' ' . $oilQty > 1 ? 'tires' : 'tire' . '<br />';
+        echo htmlspecialchars($sparkQty) . ' ' . $sparkQty > 1 ? 'tires' : 'tire' . '<br />';
+        
     ?>
 
     
