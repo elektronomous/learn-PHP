@@ -3,6 +3,7 @@
 $tireQty = $_POST['tireqty'];
 $oilQty = $_POST['oilqty'];
 $sparkQty = $_POST['sparkqty'];
+$option = $_POST['find'];
 
 ?>
 
@@ -20,6 +21,26 @@ $sparkQty = $_POST['sparkqty'];
     <h1>Bob's Auto Part</h1>
     <h2>Order Results</h2>
     <?php
+
+        echo "You're ";
+        switch($option) {
+            case 'a':
+                echo 'regular customer<br />';
+                break;
+            case 'b':
+                echo 'customer referred by TV advert<br />';
+                break;
+            case 'c':
+                echo 'customer referred by phone directory<br />';
+                break;
+            case 'd':
+                echo 'customer referred by word of mouth<br />';
+                break;
+            case 'e':
+                echo 'new customer<br />';
+                break;
+        }
+
         echo '<p>Order Process at ';
         echo date('H:i jS F Y') . '</p>';
 
@@ -33,6 +54,8 @@ $sparkQty = $_POST['sparkqty'];
         
         $totalQty += $tireQty + $oilQty + $sparkQty;
 
+        $discountTire = $discountOil = $discountSpark = 0;
+
         if(! $totalQty) {
             echo 'You did not order anything on the previous page<br />';
         } else {
@@ -41,15 +64,29 @@ $sparkQty = $_POST['sparkqty'];
             echo htmlspecialchars($oilQty) . ' ' . ($oilQty > 1 ? 'tires' : 'tire') . '<br />';
             echo htmlspecialchars($sparkQty) . ' ' . ($sparkQty > 1 ? 'tires' : 'tire') . '<br />';
 
-            $totalAmount = TIREPRICE * $tireQty
-                            + SPARKPRICE * $sparkQty
-                            + OILPRICE * $oilQty;
+
+            $totalAmount = TIREPRICE * $tireQty - (calcDiscount(TIREPRICE * $tireQty, getDiscount($tireQty))) 
+                            + SPARKPRICE * $sparkQty - (calcDiscount(SPARKPRICE * $sparkQty, getDiscount($sparkQty)))
+                            + OILPRICE * $oilQty - (calcDiscount(OILPRICE * $oilQty, getDiscount($oilQty)));
             
             echo 'Subtotal: ' . number_format($totalQty, 2) . '<br />';
             $totalAmount *= (1+$taxRage);
 
             echo 'Total including tax: $' . number_format($totalAmount, 2) . '<br />';
         }
+
+        function getDiscount(int $qty): float {
+            if( ($qty >= 10) && ($qty <= 49) ) return 5;
+            elseif ( ($qty >= 50) && ($qty <= 99) ) return 10;
+            elseif ($qty >= 100) return 15;
+
+            return 0;
+        }
+
+        function calcDiscount(float $price, float $discount): float {
+            return $price * ($discount/100);
+        }
+        
     ?>
 
 
