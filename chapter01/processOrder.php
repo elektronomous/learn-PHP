@@ -1,15 +1,14 @@
 <?php
 
 if(isset($_POST['tireqty']))
-    $tireQty = $_POST['tireqty'];
+    $tireQty = (int)$_POST['tireqty'];
 if(isset($_POST['oilqty']))
-    $oilQty = $_POST['oilqty'];
+    $oilQty = (int)$_POST['oilqty'];
 if(isset($_POST['sparkqty']))
-    $sparkQty = $_POST['sparkqty'];
+    $sparkQty = (int)$_POST['sparkqty'];
 if(isset($_POST['find']))
-    $option = $_POST['find'];
+    $option = (int)$_POST['find'];
 
-if(empty($option)) return;
 
 ?>
 

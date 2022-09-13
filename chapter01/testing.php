@@ -1,6 +1,18 @@
 <?php
 
-if(file_exists(__DIR__ . "/../../../../firefox/application.ini"))
-    echo "file exists<br />";
+/* 
+$fp = fopen("freight.php",'r');
+
+if(! $fp)
+    echo "couldn't reading";
+else{
+    var_dump($fp);
+    fclose($fp);
+} 
+
+
+file_put_contents('test.bat','');
+*/
+
 
 ?>
