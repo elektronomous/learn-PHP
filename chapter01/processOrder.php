@@ -6,8 +6,12 @@ if(isset($_POST['oilqty']))
     $oilQty = (int)$_POST['oilqty'];
 if(isset($_POST['sparkqty']))
     $sparkQty = (int)$_POST['sparkqty'];
+if(isset($_POST['address']))
+    $address = $_POST['address'];
 if(isset($_POST['find']))
-    $option = (int)$_POST['find'];
+    $option = $_POST['find'];
+else
+    $option = 'a';
 
 
 ?>
@@ -47,7 +51,8 @@ if(isset($_POST['find']))
         }
 
         echo '<p>Order Process at ';
-        echo date('H:i jS F Y') . '</p>';
+        $date = date('H:i jS F Y');
+        echo $date . '</p>';
 
         $totalQty = 0;
 
@@ -78,6 +83,35 @@ if(isset($_POST['find']))
             $totalAmount *= (1+$taxRage);
 
             echo 'Total including tax: $' . number_format($totalAmount, 2) . '<br />';
+
+            $outputString = $date . 
+                            "|\t" .
+                            $tireQty .
+                            ($tireQty > 1 ? ' tires' : ' tire') .
+                            "|\t" .
+                            $oilQty .
+                            " oil|\t" .
+                            $sparkQty .
+                            ($sparkQty > 1 ? ' spark plugs': ' spark plug') .
+                            "|\t" .
+                            $totalAmount .
+                            "|\t" .
+                            $address . "\n";
+            $fp = fopen('orders.txt', 'ab');
+
+            if(! $fp){ 
+                echo '<p><strong>Your order could not be process at this time. <br />
+                Please Try again later</strong></p>';
+                return;
+            }
+
+            flock($fp, LOCK_EX);
+
+            fwrite($fp, $outputString, strlen($outputString));
+            flock($fp, LOCK_UN);
+            fclose($fp);
+
+            echo "<p>Order written.</p>";
         }
 
         function getDiscount(int $qty): float {

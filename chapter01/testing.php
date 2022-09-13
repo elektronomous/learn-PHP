@@ -14,5 +14,12 @@ else{
 file_put_contents('test.bat','');
 */
 
+$fp = fopen('orders.txt','w');
 
+if(!$fp){
+    echo 'couldn\'t open the file';
+    return;
+}
+
+fclose($fp);
 ?>
