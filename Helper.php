@@ -2,6 +2,6 @@
 
 function varDump(array $arr): void{
     echo '<pre>';
-    var_dump($arr);
+    print_r($arr);
     echo '</pre><br />';
 }
