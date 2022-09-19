@@ -95,6 +95,13 @@ varDump($products);
 rsort($products);
 varDump($products);
 
+// rsort(), arsort(), krsort() will modified the original array into
+// the sorted one
+// you can use array_reverse() to make reverse array without modifying the
+// original array
+array_reverse($products);
+varDump($products);
+
 // now you want to sort multidimensional
 $products = array(
     array('TIR', 'Tires', 10),
