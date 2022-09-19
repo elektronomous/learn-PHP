@@ -48,6 +48,53 @@ foreach($products as $key => $value) {
     echo $key . " - " . $value . "<br />";
 }
 
+// you can also have an array inside an array called multidimensional array
+/* 
 
+    |||||||||||||||||||||||||||||||||||||||||||||
+    |   code    |   Description     |   Price   |
+    |||||||||||||||||||||||||||||||||||||||||||||
+    |   TIR     |   Tires           |   100     |
+    |   OIL     |   Oil             |   10      |
+    |   SPK     |   Spark Plugs     |   4       |
+    |||||||||||||||||||||||||||||||||||||||||||||
+
+*/
+$products = array(
+    array('TIR', 'Tires',100),
+    array('OIL', 'Oil', 10),
+    array('SPK', 'Spark Plugs', 4)
+);
+
+// you access this multidimensional by
+// $array[nRow][nColumn];
+echo 'MULTIDIMENSIONAL ARRAY <br />';
+
+echo $products[0][1] . '<br />';
+
+// you know that your row is 3 and you column is 3
+// then you can use looping through the whole row and column
+for($row = 0; $row < 3; $row++) {
+    for($column = 0; $column < 3; $column++) {
+        echo $products[$row][$column] . "\t|\t";
+    }
+    echo "<br />";
+
+}
+
+$products = array('Tires' => 100, 'Oil' => 10, 'Spark Plugs' => 4);
+// you use sort() function to sort an array
+// you use ksort() and asort() to sort an associative array
+// you use asort to sort the values of associative array
+// you use ksort to sort the key of associative array
+asort($products);
+varDump($products);
+
+// you can reverse the sort result using
+// rsort, arsort, krsort function
+rsort($products);
+varDump($products);
+
+// now you want to sort multidimensional
 
 ?>
