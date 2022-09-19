@@ -110,5 +110,11 @@ varDump($products);
 array_multisort($products, SORT_DESC);
 varDump($products);
 
+/* 
+    now say that you want your customer doesn't get bored
+    when visit your site, so you show your product randomly.
+    using shuffle() function you can do this
+*/
+
 
 ?>
