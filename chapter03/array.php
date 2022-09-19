@@ -96,5 +96,19 @@ rsort($products);
 varDump($products);
 
 // now you want to sort multidimensional
+$products = array(
+    array('TIR', 'Tires', 10),
+    array('OIL', 'Oil', 4),
+    array('SPARK', 'Spark Plugs', 100)
+);
+
+// you use array_multisort() function to sort multidimensional array
+// this multisort() function will sort by each of the first element
+array_multisort($products);     // sort ascending
+varDump($products);
+// now you can define SORT_DESC to reverse it
+array_multisort($products, SORT_DESC);
+varDump($products);
+
 
 ?>
