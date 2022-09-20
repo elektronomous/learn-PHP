@@ -17,6 +17,5 @@ file_put_contents('test.bat','');
 */
 
 $fp = file('orders.txt');
-varDump($fp);
-
+varDump(explode("|\t",$fp[0]));
 ?>
