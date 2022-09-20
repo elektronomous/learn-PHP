@@ -146,4 +146,6 @@ echo current($products) . '<br />';
 // prev() function will move backward of an array and return the current array
 echo prev($products) . '<br />';
 
+echo pos($products) . '<br />';
+
 ?>
