@@ -120,8 +120,30 @@ varDump($products);
 /* 
     now say that you want your customer doesn't get bored
     when visit your site, so you show your product randomly.
-    using shuffle() function you can do this
+    using shuffle() function you can do this by shuffle the array
+
+    every array has an internal pointer that points to the current 
+    elements in the array.
 */
 
+// current() function return the first element of an array
+$products = ['Tires', 'Oil', 'Spark Plugs'];
+
+echo current($products) . '<br />';
+// next() function return the next element of an array and move forward the internal array
+// to the next element
+echo next($products) . '<br />';
+echo current($products) . '<br />';
+
+// reset() function will reset the internal pointer of the array to the beginning of the array
+// and return the first element of the array
+reset($products);
+echo current($products) . '<br />';
+// end() function will move the internal pointer to the last of the array and return the last
+// element of the array
+end($products);
+echo current($products) . '<br />';
+// prev() function will move backward of an array and return the current array
+echo prev($products) . '<br />';
 
 ?>
