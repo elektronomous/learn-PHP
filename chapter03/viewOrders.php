@@ -19,7 +19,6 @@ $documentRoot = $_SERVER['DOCUMENT_ROOT'];
     <?php
     $orders = file($documentRoot . '/learn-PHP/chapter03/orders.txt');
 
-
     $numberOfOrders = count($orders);
     if(!$numberOfOrders) 
         echo '<p><strong>No orders pending.<br />
