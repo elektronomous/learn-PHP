@@ -1,4 +1,6 @@
 <?php
+require_once(__DIR__ . "/../Helper.php");
+
 $documentRoot = $_SERVER['DOCUMENT_ROOT'];
 ?>
 
@@ -17,9 +19,11 @@ $documentRoot = $_SERVER['DOCUMENT_ROOT'];
     <h2>Customer Orders</h2>
 
     <?php
-    $orders = file($documentRoot . '/learn-PHP/chapter03/orders.txt');
+    set_error_handler('errHandler', E_ALL);
 
-    $numberOfOrders = count($orders);
+    $orders = file($documentRoot . '/learn-PHP/chapter03/ordersr.txt');
+
+
     if(!$numberOfOrders) 
         echo '<p><strong>No orders pending.<br />
         Please try again later.</p></strong>';

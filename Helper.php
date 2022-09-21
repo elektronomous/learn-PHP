@@ -7,6 +7,6 @@ function varDump(array $arr): void{
 }
 
 function errHandler(int $type, string $msg, string $file = null, int $line = null): void {
-    echo $type . ':' . $msg . ' in ' . $file . ' on line ' . $line . '<br />';
+    echo $type . ':' . $msg . '<br />';
     return;
 }
