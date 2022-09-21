@@ -148,4 +148,42 @@ echo prev($products) . '<br />';
 // you can either use pos() or current(), it does the same thing
 pos($products);
 
+// USING ARRAY WALK
+// your customer found that it need twice as the current Tires, Oil, Spark Plugs it has
+// you can use the array_walk() function to modify the customer needs
+// the specification function must be
+// yourfunction($value, $key, $factor) which $key & $factor is optional
+
+function multiplyByTwo(&$element) {
+    $element *= 2;
+}
+
+$Tires = 2;
+$Oil = 5;
+$Spark = 7;
+
+$products = ['Tires', 'Oil', 'Spark'];
+
+foreach($products as &$product) {
+    $product = $$product;
+}
+varDump($products);
+// now using array walk to modify the customer product
+array_walk($products, 'multiplyByTwo');
+varDump($products);
+
+// now consider that you have an associative array
+$products = [
+    'Tires' => 2,
+    'Oil' => 5,
+    'Spark' => 7
+];
+
+function showAssArray(&$value, $key) {
+    echo $key . ' => ' . $value . "<br />";
+    $value *= 2;
+}
+
+array_walk($products, 'showAssArray');
+varDump($products);
 ?>
