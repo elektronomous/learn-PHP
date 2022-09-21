@@ -229,4 +229,31 @@ $listedProducts =[
 echo count($listedProducts) . '<br />';
 // and using the array_count_values() does the same as the common array
 varDump(array_count_values($listedProducts)); 
+
+/* 
+    you have listed products, you dont want to specify them one by one 
+    you use extract() function, to make the key of associative array as the variable
+    and its value will be the value of the variable
+    
+    * extract(array var_arry[, int extract_type], [, string prefix])
+
+    extract_type tells extract() how to handle collisions.
+    the default one is overwrite the existing key when the key is same.
+    the key that's overwritted is the lowest one.
+
+    the allowable values is =
+
+    EXTR_OVERWRITE          => Overwrites the existing variable when collision occurs
+    EXTR_SKIP               => Skips an element when collision occurs.
+    EXTR_PREFIX_SAME        => create a variable named $prefix_key when collision occurs. you must supply prefix.
+    EXTR_PREFIX_ALL         => prefixes all variables with prefix. you must supply prefix.
+    EXTR_PREFIX_INVALID     => prefixes variables names that otherwise be invalid ( for example, numeric variables names).
+                               you must supply prefix
+    EXTR_IF_EXISTS          => extract only variables that already exist(that's, writing the existing variables with value
+                               from the array). this parameter is usefull for converting, for example, $_REQUEST to a set of
+                               valid variables
+    EXTR_PREFIX_IF_EXIST    => creates a prefixed version only if the nonprefixed version already exist.
+    EXTR_REFS               => extract variables as references.
+*/
+
 ?>
