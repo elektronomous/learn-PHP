@@ -186,4 +186,47 @@ function showAssArray(&$value, $key) {
 
 array_walk($products, 'showAssArray');
 varDump($products);
+
+// now you want to counting the element of array
+// you can use count(), sizeof(), and array_count_values() function
+// the sizeof() is an alias of the count() function
+
+// say that you have listed your product
+$Tires = 10;
+$Oil = 7;
+$Spark = 5;
+$Gear = 5;
+$Accu = 3;
+$Gas = 10;
+
+$listedProducts = [
+    $Tires,
+    $Oil,
+    $Spark,
+    $Gear,
+    $Accu,
+    $Gas
+];
+
+// now you use count to show how many product that you listed
+echo count($listedProducts) . '<br />';
+// when using the array_count_values(), the function will return
+// an associative array shows that the key is your array values, and the value
+// of the associative key is that how much the key is showed
+varDump(array_count_values($listedProducts));
+
+// now to ease your job, you listed using associative array
+$listedProducts =[
+    'Tires' => 10,
+    'Oil' => 7,
+    'Spark' => 5,
+    'Gear' => 5,
+    'Accu' => 3,
+    'Gas' => 10
+];
+
+// using count() does the same as the common array
+echo count($listedProducts) . '<br />';
+// and using the array_count_values() does the same as the common array
+varDump(array_count_values($listedProducts)); 
 ?>
