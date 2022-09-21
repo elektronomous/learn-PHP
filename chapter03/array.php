@@ -255,5 +255,8 @@ varDump(array_count_values($listedProducts));
     EXTR_PREFIX_IF_EXIST    => creates a prefixed version only if the nonprefixed version already exist.
     EXTR_REFS               => extract variables as references.
 */
+varDump($listedProducts);
+extract($listedProducts, EXTR_PREFIX_ALL, "");
+echo $_Tires . ' ' . $_Oil . ' ' .  $_Spark . ' ' .  $_Gear . ' ' .  $_Accu . ' ' .  $_Gas . '<br />';
 
 ?>
