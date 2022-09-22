@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__ . "/../Helper.php");
 
 // say that you have a form that you want to filter out.
 // say that you have registration form. you want the user to not maliciously input their name
@@ -104,5 +105,44 @@ echo substr($_feedback, 5) . '<br />';     // start from 5th element            
 echo substr($_feedback, -10) . '<br />';    // start from 10th element from the back                    => t you sell
 echo substr($_feedback, 5, 11) . '<br />';  // start from the 5th element -> 10th element               => s for all o
 echo substr($_feedback, 11, -5) . '<br />'; // start from the 11th element -> 5th element from the back => all of the good things that you
+
+// when sorting a data, like product's name you can use a
+// function to create compare function. so your sorting algorithm
+// could use that function to order your products' name.
+// strcmp(), strcasecmp(), strnatcmp(). it has format like:
+//      str*cmp(string str1, string str2);
+$products = [
+    'Tires',
+    'Oil',
+    'Spark',
+    'Gear'
+];
+
+varDump($products); 
+/* 
+    Array
+    (
+        [0] => Tires
+        [1] => Oil
+        [2] => Spark
+        [3] => Gear
+    )
+*/
+
+usort($products, function($str1, $str2) {
+    return strcmp($str1, $str2);
+});
+
+varDump($products); 
+/* 
+    Array
+    (
+        [0] => Gear
+        [1] => Oil
+        [2] => Spark
+        [3] => Tires
+    )
+*/
+
 
 ?>
