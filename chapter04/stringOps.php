@@ -176,6 +176,17 @@ echo strstr($_email, 'trone') . '<br />';       // => trone333@gmail.com
 // strchr() will find a character in a string
 echo strchr($_email, '@') . '<br />';           // => @gmail.com
 
+// you can get position of a string/a single character using
+// strpos(), strrpos() function
+//      strpos(string haystack, string needle[, int offset=0])
+//   A b d u r r a h m a  n     B  i  n      A  u  f
+// 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
 
+echo strpos($_name, "Auf") . '<br />';      // => 17
+echo strpos($_name, "r") . '<br />';      // => 5
+// you can search from specified position
+echo strpos($_name, 'a', 8) . '<br />';     // => 10
+// strrpos() will find the string backward, from the end -> start of the string
+echo strrpos($_name, "r") . '<br />';       // => 6
 
 ?>
