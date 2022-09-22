@@ -50,4 +50,11 @@ echo 'before replace: ' ; var_dump($_email); echo '<br />';     // before replac
 str_replace("\r\n",'',$_email);
 echo 'after replace: ' ; var_dump($_email); echo '<br />';      // after replace: string(24) "elektrone333@gmail.com "
 
+// or you can use nlbr2() function, which replace the newlines("\n") with <br /> html code
+$content =  'Customer Name: ' . $_name . "\r\n" .
+            'Customer Email: ' . $_email . "\r\n" .
+            "Customer Feedback: \r\nThanks for the ordering!";
+echo nl2br(htmlspecialchars($content));
+
+
 ?>
