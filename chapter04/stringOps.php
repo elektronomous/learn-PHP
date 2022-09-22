@@ -40,4 +40,14 @@ echo htmlspecialchars('<h1>Hello There</h1>') . '<br />';   // => <h1>Hello Ther
 // code using htmlspecialchars()
 
 
+// now say that you have HTML, you don't send its output into the browser right, instead you send
+// a message to email. so you don't need htmlspecialchars() function for the email form
+// the main issue in email is that headers are seperated by the character string "\r\n".
+// we need to take care that user data we in the email headers doesnt contain theser character, or
+// we run the risk of a set of attacks, called header injection.
+$_email = "elektrone333@gmail.com\r\n";
+echo 'before replace: ' ; var_dump($_email); echo '<br />';     // before replace: string(24) "elektrone333@gmail.com "
+str_replace("\r\n",'',$_email);
+echo 'after replace: ' ; var_dump($_email); echo '<br />';      // after replace: string(24) "elektrone333@gmail.com "
+
 ?>
