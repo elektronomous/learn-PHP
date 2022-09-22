@@ -189,4 +189,17 @@ echo strpos($_name, 'a', 8) . '<br />';     // => 10
 // strrpos() will find the string backward, from the end -> start of the string
 echo strrpos($_name, "r") . '<br />';       // => 6
 
+// maybe you'll face a customer with abusive word,
+// you can replace them using substr_replace() function/
+// str_replace()
+//      string str_replace(mixed needle, mixed new_needle, mixed haystack[, int &count])
+//      string substr_replace(mixed string, mixed replacement, mixed start[, mixed length])
+$_feedback = 'Shut the fuck up';
+echo str_replace(['Fuck', 'Shit'], '****', ucwords($_feedback)) . '<br />';     // => Shut The **** Up
+// start parameter in substr_replace if you fill it using negative number,
+// then the fucntion will start search for the string from the back(end of the string)
+echo substr_replace($_feedback, '__', 0, 5) . '<br />';     // => __the fuck up
+
+
+
 ?>
