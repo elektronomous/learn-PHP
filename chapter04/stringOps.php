@@ -58,7 +58,25 @@ echo nl2br(htmlspecialchars($content));
 
 // you can also use the sprintf() and printf() function
 // it does the same job like echo
-printf("<br />your name is: %s\n", $_name);
+printf("<br />your name is: %s <br />", $_name);
+
+// now maybe you want to look words in a sentence(say for spellchecking)
+// or split a domain name or email address into its component parts.
+// the first function you could use for this purpose is that explode()
+var_dump(explode('@', $_email)); echo '<br />';     // => array(2) { [0]=> string(12) "elektrone333" [1]=> string(11) "gmail.com " } 
+// from this you can decide whether the email is google mail or another mail
+$emailArray = explode('@',$_email);
+$emailDomain = trim($emailArray[1]);
+
+if($emailDomain === 'gmail.com') 
+    // set smtp port to 587
+    echo 'Set SMTP PORT 587 <br />';
+else 
+    echo 'Set Another Port<br />';
+
+// now to join the seperate array to a string you using
+// join() or implode() function
+echo implode('@',$emailArray);              // => elektrone333@gmail.com
 
 
 
