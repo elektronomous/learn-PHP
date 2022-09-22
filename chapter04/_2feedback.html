@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bob's Auto Part - Customer Feedback</title>
+  </head>
+  <body>
+    <h1>Customer Feedback</h1>
+    <p>Please tell us what you think</p>
+
+    <form method="post" action="_1processFeedback.php">
+      <label>Your name:</label><br />
+      <input type="text" size="20" maxlength="50" name="name" /><br />
+      <label>Your email address:</label><br />
+      <input type="text" size="20" maxlength="100" name="email" /><br />
+      <label>Your feedback:</label><br />
+      <textarea name="feedback" rows="5" cols="50"> </textarea><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
