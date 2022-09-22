@@ -93,4 +93,16 @@ echo $token . '<br />';         // => of
 for($token = strtok($_feedback, ' '); !empty($token); $token = strtok(' ')) {
     echo $token . '<br />';
 }
+
+// thereis a function to gain such a copy of its sub string
+// called substr(). it's format is like this:
+//      substr(string string, int start[, int length]);
+// the string is like an array, you start counting its element
+// from 0.
+echo substr($_feedback, 0) . '<br />';     // start from 0th element                                    => Thanks for all of the good things that you sell
+echo substr($_feedback, 5) . '<br />';     // start from 5th element                                    => s for all of the good things that you sell
+echo substr($_feedback, -10) . '<br />';    // start from 10th element from the back                    => t you sell
+echo substr($_feedback, 5, 11) . '<br />';  // start from the 5th element -> 10th element               => s for all o
+echo substr($_feedback, 11, -5) . '<br />'; // start from the 11th element -> 5th element from the back => all of the good things that you
+
 ?>
