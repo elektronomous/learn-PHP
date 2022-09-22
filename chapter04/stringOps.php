@@ -153,4 +153,29 @@ if(strlen($_email) < 6)
 else
     echo 'validated email<br />';
 
+// another string operation is that strstr(), strchr(),
+// strrchr(), stristr() function which find string in a string.
+// you can use this function to decide something, like sending
+// feedback to another email address.
+// the format of this function:
+//      strstr(string haystack, string needle[, bool before_needle=false])
+if(strstr($_email, 'shop')) {
+    $toAddress = 'retail@example.com';
+} else if(strstr($_email, 'delivery')) {
+    $toAddress = 'fulfillment@example.com';
+} else if(strstr($_email, 'bill')) {
+    $toAddress = 'accounts@example.com';
+}
+
+// or you want to know the result from using this function
+echo strstr($_email, 'gmail') . '<br />';       // => gmail.com
+echo strstr($_email, 'faza') . '<br />';        // empty string =>
+echo strstr($_email, 'trone') . '<br />';       // => trone333@gmail.com 
+// if you need something that's not case sensitive, you can use
+// stristr() function instead strstr() function.
+// strchr() will find a character in a string
+echo strchr($_email, '@') . '<br />';           // => @gmail.com
+
+
+
 ?>
