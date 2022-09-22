@@ -56,6 +56,9 @@ $content =  'Customer Name: ' . $_name . "\r\n" .
             "Customer Feedback: \r\nThanks for the ordering!";
 echo nl2br(htmlspecialchars($content));
 
+// you can also use the sprintf() and printf() function
+// it does the same job like echo
+printf("<br />your name is: %s\n", $_name);
 
 
 
