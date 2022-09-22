@@ -25,4 +25,19 @@ $dateOfBirth = '-22-07-1997-';
 var_dump(trim($dateOfBirth, '-')); echo '<br />'; // => string(10) "22-07-1997"
 // rtrim() is the aliasing of chop() function.
 
+// you filter the input string and output string
+// when show the output of the string to browser, we need to carefully send them
+// because some characters and strings are a special control character or commands.
+// using htmlspecialchars() function.
+// htmlspecialchars() function converts the character that has special meaning in HTML
+// to their HTML entity equivalent.
+echo '<h1>Hello There</h1>';                    // this will formatting as the HTML 
+// but using the htmlspecialchars()
+echo htmlspecialchars('<h1>Hello There</h1>') . '<br />';   // => <h1>Hello There</h1>
+// say that your form, accept name, and you just send the name to the output of the browser.
+// now the user input malicious HTML/JavaScript code. the HTML/JavaScript code will render
+// by the browser and ended up in code injection. that's why you need to filter the HTML/JavaScript
+// code using htmlspecialchars()
+
+
 ?>
