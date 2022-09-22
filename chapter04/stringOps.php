@@ -76,8 +76,21 @@ else
 
 // now to join the seperate array to a string you using
 // join() or implode() function
-echo implode('@',$emailArray);              // => elektrone333@gmail.com
+echo implode('@',$emailArray) . '<br />';              // => elektrone333@gmail.com
 
+// when explode, it return an array. when you use the strtok() function each of the
+// seperate string create a tokens
+$_feedback = 'Thanks for all of the good things that you sell';
+var_dump(strtok($_feedback, " ")); echo '<br />';                      // => string(6) "Thanks"
 
+$token = strtok(' ');
+echo $token . '<br />';         // => for
+$token = strtok(' ');
+echo $token . '<br />';         // => all
+$token = strtok(' ');
+echo $token . '<br />';         // => of
 
+for($token = strtok($_feedback, ' '); !empty($token); $token = strtok(' ')) {
+    echo $token . '<br />';
+}
 ?>
