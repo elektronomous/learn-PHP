@@ -144,5 +144,13 @@ varDump($products);
     )
 */
 
+// an email has 6 character minimum length.
+// you can validate the email of a customer using
+// strlen() function
+echo strlen($_email) . '<br />';
+if(strlen($_email) < 6) 
+    echo 'invalid email<br />';
+else
+    echo 'validated email<br />';
 
 ?>
