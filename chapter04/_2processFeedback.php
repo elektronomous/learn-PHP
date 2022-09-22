@@ -16,7 +16,7 @@ $mailContent = "Customer Name: " . str_replace("\r\n", "", $_name) . "\n" .
                 "Customer Email: " . str_replace("\r\n", "", $_email) . "\n" .
                 "Customer Feedback: \n" . str_replace("\r\n", "", $_feedback) . "\n";
 
-$fromAddress = "From: webserver@examples.com";
+$fromAddress = "From: akbarfaza222@gmail.com";
 
 // invoke mail() function to send mail
 mail($toAddress, $subject, $mailContent, $fromAddress);
