@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="testing.php" method="post">
-        <input type="text" name="email" />
+        <input type="text" name="value" />
         <input type="submit" value="Submit" />
     </form>
 </body>
@@ -16,13 +16,17 @@
 <?php
 # filtering email using the regular expression
 $matchArr = [];
-$email = $_POST['email'];
+$email = $_POST['value'];
 
-if(isset($email)){
+/* if(isset($email)){
     if(preg_match('/^[a-zA-Z0-9\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/', $email, $matchArr) === 0) {
         echo 'invaid email';
     } else {
         echo '<pre>'; var_dump($matchArr); echo '</pre>' . '\n';
     }
+} */
+
+if(isset($email)) {
+    echo preg_replace('/[a-zA-Z0-9\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9]+/', "#", $email);
 }
 ?>
