@@ -1,0 +1,16 @@
+    = An array is simply a list of other values 
+        $articles = [
+            "First post",
+            "Another post",
+            "Read this!"
+        ];
+    = $articles contains 3 string values.
+    = There are 2 ways to create an array in PHP:
+      = You create the array using [] (square brackets) like the $articles
+      = The alternative one is using array function
+        $articles = array(
+            "First post",
+            "Another post",
+            "Read this!"
+        );
+    
