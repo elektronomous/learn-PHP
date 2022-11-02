@@ -1,1 +1,13 @@
-=*= After installing xampp, 
+WINDOWS 7 SET UP
+=*= Create your workspace first on wherever folder you want
+=*= After installing xampp
+    =*= open Xampp control panel
+    =*= click on config button
+    =*= click on Apache(httpd.conf)
+    =*= find 
+        DocumentRoot "C:/xampp/htdocs/"
+        Directory "C:/xampp/htdocs/"
+    =*= replace the folder to your workspace, so it change like this
+        DocumentRoot "D:/Your/Workspace/Folder"
+        Directory "D:/Your/Workspace/Folder"
+    =*= save it and start on Apache Module
