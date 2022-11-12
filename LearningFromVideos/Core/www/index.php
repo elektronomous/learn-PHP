@@ -39,6 +39,8 @@ $fruits = ["Apple", "Bananas", "Strawberry"];
         <li><?php echo $fruit; ?></li>
         <?php endfor; ?>
     </ol>
+    <pre><?php print_r($_SERVER);?></pre>
+    <pre><?php print_r($_GET); ?></pre>
 </body>
 
 </html>
