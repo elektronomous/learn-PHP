@@ -1,16 +1,57 @@
     = An array is simply a list of other values 
+        
         $articles = [
             "First post",
             "Another post",
             "Read this!"
         ];
+
     = $articles contains 3 string values.
     = There are 2 ways to create an array in PHP:
       = You create the array using [] (square brackets) like the $articles
       = The alternative one is using array function
+        
         $articles = array(
             "First post",
             "Another post",
             "Read this!"
         );
-    
+
+13  - Create the $articles and var_dump to see the contents of the array 
+    = The value of each of the array is called array element.
+      = $articles has 3 elements.
+    = You access the array element by indexing using [] operator in their 
+      variable's name
+        echo $articles[0];          // => First post
+        echo $articles[1];          // => Another post,
+        ...
+14  - var_dump the first element
+    = by default, PHP create the index that's a number starting from zero when you creating
+      an array.
+      = However, you can also manually specify your index. you specify the index like this:
+        
+        $articles = [
+            1 => "First post",
+            3 => "Another post",
+            "Read this!"
+        ];
+
+      = The last part automatically will be continuing the previous element index.
+15  - create another array which you manually specify the index and var_dump
+      = The index also can specified by string, not a number only.
+        = This is called associative array.
+          $articles = [
+            "first" => "First post",
+            "four" => "Another post",
+            "Read this!"
+          ];
+        = The last part automatically will be the first index that's a number
+          which on array the index starting from zero.
+     = You can only create an Associative array from only two data types:
+       integer & string.
+     = The index you've created manually on associative array is called key.
+16 - create associative array and access it first - last element using var_dump
+     = We can shows the all of the elements using loop. so you dont' echoing each of 
+       the element of the array one by one.
+17 - using foreach loop to echo one by one the element of the array on 13-
+18 - using foreach loop to echo one by one the associative arrays 15-

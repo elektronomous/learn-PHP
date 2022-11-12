@@ -1,6 +1,25 @@
 <?php
 # 2 - PHP Opening Tag => web server marks this as the start of PHP code
 
+# 19 - Create an empty array
+$emptyArray = [];
+
+# 16 - Create associative array
+$assocArticles = [
+    "first" => "First post",
+    "second" => "Another post",
+    "Read this!"
+];
+# 15 - Create another array which the index spcified by you
+$anotherArticles = [
+    1 => "First post",
+    3 => "Another post",
+    "Read this!"
+];
+
+# 13 - Create array articles
+$articles = ["First post", "Another post", "Read this!"];
+
 # 10 - create string variable that has value sequences of number
 $myPin = "123";
 
@@ -75,6 +94,49 @@ if ($is_admin && $is_admin) {
 # 12 - Using {} braces to insert variable
 echo "{$greet} Faza"; echo "\t| => " . __LINE__ . "<br />";
 
+# 13 - var_dump to see the contents of the array
+var_dump($articles); echo "\t| => " . __LINE__ . "<br />";
+
+# 14 - var_dump the first element
+var_dump($articles[0]); echo "\t| => " . __LINE__ . "<br />";
+var_dump($articles[1]); echo "\t| => " . __LINE__ . "<br />";
+var_dump($articles[2]); echo "\t| => " . __LINE__ . "<br />";
+
+# 15 - var_dump whole $anotherArray
+var_dump($anotherArticles); echo "\t| => " . __LINE__ . "<br />";
+#    - as you can see, the last element will be given 4, as it continuing
+#    - the previous element.
+
+# 16 - var_dump the first - last element
+var_dump($assocArticles["first"]); echo "\t| => " . __LINE__ . "<br />";
+var_dump($assocArticles["second"]); echo "\t| => " . __LINE__ . "<br />";
+var_dump($assocArticles[0]); echo "\t| => " . __LINE__ . "<br />";
+
+# 17 - using foreach loop on 13- variable
+foreach($articles as $article) {    # each element of $articles assign to $article
+    echo $article; echo "\t| => " . __LINE__ . "<br />";
+}
+
+# 18 - using foreach loop on 15- variable
+foreach($anotherArticles as $index => $article) { # each index and associative value of $anotherArticles
+                                                  # assign to $index and $article
+    echo $index . " " . $article; echo "\t| => " . __LINE__ . "<br />"; 
+}
+
+# 19 - Evaluate the empty array using if statements
+if(empty($emptyArray)) {    // if true
+    // then execute this code
+    echo "It's an empty array"; echo "\t| => " . __LINE__ . "<br />";
+} else {                    // if false
+    // then execute this code
+    echo "It's not an empty array"; echo "\t| => " . __LINE__ . "<br />";
+}
+
+for ($i = 0; $i<10; $i++) {
+    $emptyArray[] = $i;
+}
+
+var_dump($emptyArray);
 # 2 - PHP Closing Tag => web server marks this as the end of the PHP code
 ?>
 

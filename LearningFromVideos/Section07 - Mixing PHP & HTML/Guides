@@ -1,0 +1,35 @@
+20 - create a file called index.php
+     = everytime you create a variable on PHP side, make sure you create at the top
+       of the HTML.
+     = say now you have condition statement, you want to mix them with HTML like this:
+
+        <?php
+        
+        $hour = 12;
+
+        if($hour < 12) {
+            echo "Good Morning";
+        }else if($hour < 18) {
+            echo "Good Afternoon";  
+        }else if($hour < 22) {
+            echo "Good Evening";
+        }
+
+        ?>
+
+     = Do not mix the initialization of the variable with the conditional statement. instead
+       create the initialization on top of the HTML code.
+21 - initialize your variable on top of your HTML code also move the initialized variable if
+     they're still within HTML code.
+     = alternative control structure
+
+     <?php
+     $hour = 12;
+     ?>
+
+     <?php if($hour < 12): ?>
+        HTML CODE
+     <? endif; ?>
+
+     = this alternative works for while(endwhile;), for(endfor;), foreach(endforeach;), and 
+       switch(endswitch;)
