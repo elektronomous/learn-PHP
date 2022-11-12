@@ -1,0 +1,74 @@
+   = HTML is HyperText Markup Language, it allows us to structure our web d
+    = HTML consists of a series of elements which there are two type:
+      = element which use to wrap some text and consist of opening tag and an end tag.
+       
+            <p>This is paragraph element</p>
+    
+    = Tags are element's name surrounded by angle bracket
+      = HTML tags can also have attributes
+
+            <a href="www.google.com">this link naviagate to google</a>
+      
+      = the 'href' is tag's attribute.
+      = element which doesn't have a closing tag as it doesn't wrap anything.
+
+            <img src="/folder/to/your/image.jpg" />
+    
+      =
+
+2   - create index.html inside the Core/www
+3   - Create Heading level1 for Lorem Ipsum title
+4   - Seperate them using paragraph element.
+    = meta charset is metadata that you use to set the characters the web page will use.
+      = for example, if you try to insert japanese, chinese or another country that their characters
+        don't use alphabet the page can't translate it because the charset isn't specified. the result
+        of the page will strange.
+    = Just like a book has main titles, chapter titles, subtitles and so on. HTML heading element has it subheading
+5   - create a subheading level 2 for each of the paragraph
+    = basic website SECTION
+    
+
+    |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    ||                                                                                   ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||  ||                                                                           ||  ||
+    ||  ||                              HEADER                                       ||  ||
+    ||  ||                                                                           ||  ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||                                                                                   ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||  ||                                                                           ||  ||
+    ||  ||                        NAVIGATION LINK                                    ||  ||
+    ||  ||                                                                           ||  ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||                                                                                   ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||  ||
+    ||  ||                                                        || ||              ||  ||
+    ||  || ARTICLE HEADING                                        || ||              ||  ||
+    ||  ||                                                        || ||              ||  ||
+    ||  || SUBHEADING                                             || ||              ||  ||
+    ||  ||                                                        || ||              ||  ||
+    ||  || CONTENTS                                               || ||              ||  ||
+    ||  ||                                                        || ||              ||  ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| ||||||||||||||||||  ||
+    ||                                                                                   ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||  ||                                                                           ||  ||
+    ||  ||                               FOOTER                                      ||  ||
+    ||  ||                                                                           ||  ||
+    ||  |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  ||
+    ||                                                                                   ||
+    |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    
+    = HTML provide us with elements that we can use to markup these section of the page based
+      on their function.
+      =<header> element     => for the common information at the top of the page like a logo or
+                               main title
+                            => can be use at the top of a section element 
+      = <Nav> element       => for the navigation bar which is usually just a series of links.
+      = <main> element      => represent the main contents of a document.
+      = <article> element   => represent a standalone piece of content like news article or blog post.
+      = <section> element   => it's similar to the article but the section doesn't have a semantic meaning.
+      = <aside> element     => for content that's related to the main content often shown in sidebar
+      = <footer> element    => which typically contains information about an author or copyright information. 
+    = <div> element create a new line and <span> element shown in line with the rest of the sorrounding content.
