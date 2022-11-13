@@ -2,7 +2,7 @@
 <?php
 
 // 14
-require_once "database.php";
+require_once "includes/database.php";
 
 // 13
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -31,7 +31,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 ?>
 
-<?php require_once "header.php"; ?>
+<?php require_once "includes/header.php"; ?>
 <?php if ($articles == null): ?>
 <p>No articles found.</p>
 <?php else: ?>
@@ -46,4 +46,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 </ul>
 <?php endif; ?>
-<?php require_once "footer.php"; ?>
+<?php require_once "includes/footer.php"; ?>

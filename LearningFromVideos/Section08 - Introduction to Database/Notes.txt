@@ -44,4 +44,4 @@
      - using require_once to load the database.php
 15   - also remove the header of the html from connectDB.php and article.php
      - put them into a file called header.php
-     
+16   - create .htaccess files to deny access to includes folder and its files.

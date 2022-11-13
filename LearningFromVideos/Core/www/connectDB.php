@@ -2,7 +2,7 @@
 <?php
 
 // 14
-require_once "database.php";
+require_once "includes/database.php";
 // 8
 $sql = "SELECT * FROM articles";
 // 8 - send query
@@ -24,7 +24,7 @@ if ($results === false) {
 
 ?>
 
-<?php require_once "header.php" ?>
+<?php require_once "includes/header.php" ?>
 <?php if (empty($articles)): ?>
 <p>No articles found.</p>
 <?php else: ?>
@@ -39,4 +39,4 @@ if ($results === false) {
     <?php endforeach; ?>
 </ul>
 <?php endif; ?>
-<?php require_once "footer.php" ?>
+<?php require_once "includes/footer.php" ?>
