@@ -7,7 +7,9 @@ require_once "includes/database.php";
 // 13
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     // 8
-    $sql = "SELECT * FROM articles WHERE id=" . $_GET['id'];
+    echo "<br />";
+    $sql = "SELECT * FROM article WHERE id=" . $_GET['id'];
+    echo $sql . "<br />";
     // 8 - send query
     $results = mysqli_query($connect, $sql);
 

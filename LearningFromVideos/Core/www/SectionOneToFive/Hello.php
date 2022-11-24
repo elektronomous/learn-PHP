@@ -137,7 +137,18 @@ for ($i = 0; $i<10; $i++) {
 }
 
 var_dump($emptyArray);
+
+echo "<br />";
 # 2 - PHP Closing Tag => web server marks this as the end of the PHP code
+if (isset($_GET['value'])) {
+    echo "true"; echo "\t| => " . __LINE__ . "<br />";
+    echo $_GET['value']; echo "\t| => " . __LINE__ . "<br />";
+    if (is_numeric($_GET['value'])) {
+        echo "Numeric";
+    } else if (is_string($_GET['value'])) {
+        echo "String";
+    }
+}
 ?>
 
 <html>

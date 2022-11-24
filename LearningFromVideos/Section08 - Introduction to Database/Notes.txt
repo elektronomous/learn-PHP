@@ -10,6 +10,21 @@
 2    - goto localhost/phpmyadmin/
 3    - create database called 'cms' with collation 'utf8mb4_unicode_ci'
 4    - add user account to make this database safe.
+       [=] create a priviliges(username and its password) for the database we created:
+        = goto priviliges tab
+        = below the table, click add user account
+              
+              [=] username = "elektronomous"
+              [=] hostname = Choose local        => since we access this db from this computer
+              [=] password = "anythingyoulike"
+              [v] grant all access to this db    => means the elektronomous user could do anything to this db
+
+       [=] create a table called `article` with 4 rows
+              CREATE TABLE `cms`.`article` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(128) NOT NULL , `content` TEXT NOT NULL , `published_at` DATE NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+       
+       = when you check A_I(AUTO_INCREMENT) box, you don't need to fill the id, when you insert a data to the table.
+       [=] insert a value to the article
+              INSERT INTO `article` (`id`, `title`, `content`, `published_at`) VALUES (NULL, 'First post', 'This is my first of many post!', '2022-10-20'), (NULL, 'Second post', 'Another interesting post', '2022-11-01');
        = to create a fast response when you querying sql commands you need to create an index
        to the columns.
        = this avoid sql to scan all the columns.

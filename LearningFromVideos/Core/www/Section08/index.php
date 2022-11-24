@@ -4,7 +4,7 @@
 // 14
 require_once "includes/database.php";
 // 8
-$sql = "SELECT * FROM articles";
+$sql = "SELECT * FROM article";
 // 8 - send query
 $results = mysqli_query($connect, $sql);
 
