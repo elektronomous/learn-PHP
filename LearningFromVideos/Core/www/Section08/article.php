@@ -8,11 +8,18 @@ require_once "includes/database.php";
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     // 8
     echo "<br />";
-    $sql = "SELECT * FROM article WHERE id=" . $_GET['id'];
-    echo $sql . "<br />";
-    // 8 - send query
-    $results = mysqli_query($connect, $sql);
+    // $sql = "SELECT * FROM article WHERE id=" . $_GET['id'];
+    // the safes way is use mysqli_prepare and bind_param method
+    $sql = mysqli_prepare($connect, "SELECT * FROM article WHERE id = ?");
+    $sql->bind_param('i', $_GET['id']);
+    print_r($sql); echo '<br />';
 
+    $sql->execute();
+    $results = $sql->get_result();
+    print_r($results);
+    // 8 - send query
+    // $results = mysqli_query($connect, $sql);
+    
     // 9
     if ($results === false) {
         echo mysqli_error($connect);
