@@ -1,0 +1,24 @@
+1   - Create a file called new-article.php and insert the header.php, footer.php
+      make a form inside it.
+2   - process the form using the current php file.
+      = After you debug the $_POST, you feel that the user input was right you can insert it into
+        DATABASE
+      = Using the SQL command for inserting:
+
+            INSERT INTO table_name
+                VALUES (value1, value2, value3);
+
+      = How many value are going to be inserted is must match how many column inside the table.
+      = Or you wanna insert into specific column
+
+            INSERT INTO table_name(column1, column2)
+                VALUES (value1, value2);
+        
+      = You wanna insert multiple values into the table:
+
+            INSERT INTO table_name,
+                VALUES (value1, value2),
+                       (value1, value2),
+                       (value1, value2),
+                       ......
+                       (value1, value2);
