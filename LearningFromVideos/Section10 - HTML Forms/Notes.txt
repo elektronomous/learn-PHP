@@ -55,3 +55,16 @@
         = If you have a list that need the user to choose only one option like the answer of some questions,
           you can radio button type
 8   - create radio button type.
+9   - create a fieldset element and legend element
+10  - create legend with title account registration on username & password.
+        = You can make the input element not writable by adding `readonly` as the attribute.
+        = When you selecting an option list element, you can't disable the the user can choose by
+          adding `disabled` as the attribute on <option> element.
+        = to make the input type must filled you adding `required` as the attribute of the <input> element.
+        = You can limit user to enter a specified number by using `max=LimitNumber` or `min=LimitNumber` to
+          <input> element.
+        = You can also use `pattern` attribute for pattern matching
+          <input type="text" pattern="[123]" />
+        = To customize warning that show when user input is invalidated, use `title` attribute
+        = If you wanna turn off the validation of the whole input type, you can add `novalidate` inside the
+          <form> element as the attribute.
