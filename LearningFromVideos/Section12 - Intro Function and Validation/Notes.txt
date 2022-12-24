@@ -1,0 +1,6 @@
+= function is a self-contained block of statements that can be used
+  repeatedly in a program.
+= They're a way of encapsulating code that performs a certain task.
+= We can also pass data to a function using arguments or parameters
+= We can also set the default value for the parameter we create on function
+= To access data that we process inside the function, you can return it.

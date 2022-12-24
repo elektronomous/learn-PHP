@@ -1,0 +1,5 @@
+1#  create a function called showMessage()
+2#  with its parameter called name.
+3#  create a parameter with its default value.
+4#  create a function called getMessage()
+5#  return the message inside the function
