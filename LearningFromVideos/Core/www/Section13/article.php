@@ -3,11 +3,16 @@
 
 // 14
 require_once "includes/database.php";
+// 2
+require_once "includes/article.php";
 
 // 13
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+if (isset($_GET['id'])) {
     $connect = getDB();
-    
+    // 2
+    $articles = getArticle($connect, $_GET['id']);
+
+    /* 
     // 8
     echo "<br />";
     // $sql = "SELECT * FROM article WHERE id=" . $_GET['id'];
@@ -25,13 +30,14 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     } else {
         // $articles = mysqli_fetch_all($results, MYSQLI_ASSOC);
         $articles = $sql->get_result()->fetch_assoc();
-    /* 
+    
         echo "<pre>";
         print_r($articles);
         echo "<pre><br />"; 
-    */
+    
 
     }
+    */
 } else {
     $articles = null;
 }

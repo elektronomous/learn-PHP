@@ -1,7 +1,6 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre></br>";
+header("Location: http://localhost/learn-PHP/LearningFromVideos/Core/www/Section12/index.php");
+echo "Hello THere";
 ?>
 
 <!DOCTYPE html>
