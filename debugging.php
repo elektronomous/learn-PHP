@@ -1,6 +1,9 @@
 <?php
-header("Location: http://localhost/learn-PHP/LearningFromVideos/Core/www/Section12/index.php");
-echo "Hello THere";
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    var_dump($_POST);
+    $datetime = str_replace("T", " ", $_POST['value']);
+    var_dump(date_create_from_format("Y-m-d H:i", $datetime));
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +18,7 @@ echo "Hello THere";
 
 <body>
     <form method="post" action="debugging.php">
-        <input type="text" name="value" />
+        <input type="datetime-local" name="value" />
         <input type="submit" />
     </form>
 </body>

@@ -53,7 +53,8 @@ function validateArticle(string $title, string $content, $published_date): array
         $published_date = null;
     // 11
     if ($published_date != '' || $published_date != null) {
-        $datetime = date_create_from_format('Y-m-d H:i:s', $published_date);
+        $published_date = str_replace("T", " ", $published_date);
+        $datetime = date_create_from_format('Y-m-d H:i', $published_date);
 
         if ($datetime === false) {
             array_push($errors, "Invalid date and time");

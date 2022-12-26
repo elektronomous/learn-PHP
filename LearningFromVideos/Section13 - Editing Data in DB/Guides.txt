@@ -5,3 +5,4 @@
 4#  create a file called article-form.php and cut the from we create inside
     new-article.php
 5#  create a file called article-form.php
+6#  create a file called url.php

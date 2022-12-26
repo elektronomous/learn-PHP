@@ -56,6 +56,7 @@ if (isset($_GET['id'])) {
             <h2><?= htmlspecialchars($articles['title']) ?></h2>
             <p><?= htmlspecialchars($articles['content']) ?> </p>
         </article>
+        <a href='edit-article.php?id=<?= $articles['id']; ?>'>Edit</a>
     </li>
 
 </ul>
