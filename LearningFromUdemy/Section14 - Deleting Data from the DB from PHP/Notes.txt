@@ -1,0 +1,10 @@
+= When deleting a data from a table we use sql statement:
+
+        DELETE FROM table_name WHERE condition;
+
+= If you dont specify the WHERE clause, the table will be deleted.
+= When deleting a data from database, we use POST method. This avoid
+  the user to enter a manual id on the query string make the data in the 
+  database will be deleted.
+= The use of asteriks(*) after SELECT from the database is quite performance issue.
+  So get the data that you select by only specify the column you need.
