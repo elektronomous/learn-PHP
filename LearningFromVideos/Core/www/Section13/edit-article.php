@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             if (mysqli_stmt_execute($prepare_stmt)) { // execute the statement
                 // executed successfully
-                
+                // redirect to artile that has been edited
                 redirectTo("article.php?id=$id");
             } else {
                 // executed failed
