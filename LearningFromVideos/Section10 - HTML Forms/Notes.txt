@@ -1,0 +1,70 @@
+        = When a visitor views a page from your website, the server sends the data
+          normally an html file to the visitor.
+        = In order to receive data from the user we need to use a from in our html
+          that later the visitor can enter data and send it via browser to the server.
+1   - create index.html and form.php and create a form inside form.php.
+2   - create process_form.php that will process form.php input field.
+        = The <form> element is like clicking the hyperlink attribute, you'll be redirected to the page on the
+          `action` value's attribute, and the data inside the <form> element will be attached to be sent to the page
+           on `action` value's attribute.
+        = There are two ways to send the data inside the <form> element that's speicifed by the `method` values's attribute,
+          POST and GET. 
+        = The value of element's attribute `name=` will be the query string attached to the URL for the GET method
+          inside the <form> element.
+        = The value if element's attribute `name=` will be the query string inside the body POST method
+          inside the <form> element. so the query string isn't attached to the URL.
+        = If you dont specify the `action` attribute for <form> element, the value of `name=` query string
+          will be the query string for the current php file.
+          = Because it submit the form to itself, the php code where the <form> elemtn is created.
+        = Make sure every input type that's a username and password, to make the method as POST.
+          if you have GET, then the password will be visible to the user.
+        = The history of browser will save all of the GET method <form> element.  
+        = You can access the data that sent by the <form> element using $_GET and $_POST.
+          = $_GET will be stored data that you send using GET method
+          = $_POST will be stored data that you send using POST method.
+        = You can use REQUEST_METHOD key for $_SERVER to know whether the form using GET or POST method.
+        = If you're changing data on the server, updateing or deleting a record in a database for example 
+          use POST method.
+        = When using <input type="number">, this could be easiest us when type number on mobile device, the number keypad will 
+          be directly showed rather than alphabet.
+        = When using <input type="email">, this could be easiest us when typing an email, the @ sign will showed.
+        = When using <input type="tel">, this could be easiest us to input phone number, that the keypad will form like keypad
+          home-phone.
+        = But only type with text, password, and hidden are supported by the browser.
+        = If the browser doesn't support the input type that you created, it will be default type text.
+3   - commenting out the the first <form> element data that instructed on 2- and create all type of <input> element.
+        = If the `name` attribute has space value on it, the $_GET won't process it.
+        = The hidden input type supply a value by specify the `value` attribute inside its input element.
+        = You use the `value` attribute to supply the default value for <input> element you want to default.
+        = You use the <textarea> </textarea> element to create a multiline text. it uses for example for comments, or report
+          something, or contact message and so on.
+4   - create a text area inside the form.
+        = There's an <option> element that start with <select> element.
+5   - create this for user choose the subject it wanna read
+        = the multiple attribute on <select> element, make the user to choose multiple subject.
+        = you put the `[]` after the value of the `name` attribute.
+        = so you can get all the multiple value that user selected.
+        = Have you ever seen the checklist when you aggreeing something on registration
+        = We use type "checkbox" for the input type
+6   - create input type for "checkbox"
+        = If you want to make the checkbox checked
+            <input type="checkbox" checked />
+7   - create input type for "checkbox" that choose favourite from 3 color (RGB).
+        = if you want to check multiple box, you need to add [] after the value of attribute
+          `name` and set the `value` attribute.
+        = If you have a list that need the user to choose only one option like the answer of some questions,
+          you can radio button type
+8   - create radio button type.
+9   - create a fieldset element and legend element
+10  - create legend with title account registration on username & password.
+        = You can make the input element not writable by adding `readonly` as the attribute.
+        = When you selecting an option list element, you can't disable the the user can choose by
+          adding `disabled` as the attribute on <option> element.
+        = to make the input type must filled you adding `required` as the attribute of the <input> element.
+        = You can limit user to enter a specified number by using `max=LimitNumber` or `min=LimitNumber` to
+          <input> element.
+        = You can also use `pattern` attribute for pattern matching
+          <input type="text" pattern="[123]" />
+        = To customize warning that show when user input is invalidated, use `title` attribute
+        = If you wanna turn off the validation of the whole input type, you can add `novalidate` inside the
+          <form> element as the attribute.

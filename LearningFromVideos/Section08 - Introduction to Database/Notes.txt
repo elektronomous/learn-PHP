@@ -1,0 +1,62 @@
+       = Say that you have a contents, which need to update frequently.
+       = you can store the contents to the file and access it later.
+       = but operation on a file for reading back the contents is so expensive,
+       = we need some security for the contents being read.
+       = That's why we need database
+       = A database is a structured set of data organized so that it can be easily to
+       accessed and updated.
+
+1    - on xampp control panel, start mysql database service
+2    - goto localhost/phpmyadmin/
+3    - create database called 'cms' with collation 'utf8mb4_unicode_ci'
+4    - add user account to make this database safe.
+       [=] create a priviliges(username and its password) for the database we created:
+        = goto priviliges tab
+        = below the table, click add user account
+              
+              [=] username = "elektronomous"
+              [=] hostname = Choose local        => since we access this db from this computer
+              [=] password = "anythingyoulike"
+              [v] grant all access to this db    => means the elektronomous user could do anything to this db
+
+       [=] create a table called `article` with 4 rows
+              CREATE TABLE `cms`.`article` ( `id` INT NOT NULL AUTO_INCREMENT , `title` VARCHAR(128) NOT NULL , `content` TEXT NOT NULL , `published_at` DATE NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+       
+       = when you check A_I(AUTO_INCREMENT) box, you don't need to fill the id, when you insert a data to the table.
+       [=] insert a value to the article
+              INSERT INTO `article` (`id`, `title`, `content`, `published_at`) VALUES (NULL, 'First post', 'This is my first of many post!', '2022-10-20'), (NULL, 'Second post', 'Another interesting post', '2022-11-01');
+       = to create a fast response when you querying sql commands you need to create an index
+       to the columns.
+       = this avoid sql to scan all the columns.
+       = to connect to database, we use mysqli_connect.
+5    - create a index.php on www/Section08 directory to practice how to connect to database.
+6    - initialize database's host, name, username, and its password and connect to your database
+       using mysqli_connect() function.
+       = after you connect to your database, you need to check the connection using
+       mysqli_connect_error();
+7    - using mysqli_connect_error() to find out where's the error occurs
+       = if there's no error, you could querying the commands to the database
+8    - create a query first and then using mysqli_query to send your query to connected database.
+       = you need to check if the query you send is success or failed.
+9    - check the status of your query using mysqli_error(). if it's not error you could use to get
+       the result using mysqli_fetch_all. the result will be an array.
+     - you pass MYSQLI_ASSOC to get the column associative with value.
+10   - comment out the mysqli_fetch_all, instead of get all of the array result use mysqli_fetch_assoc
+       to get only one array.
+     - comment the loop inside the HTML and the fix the if statement
+       = the 10 step is for showing only one post. 
+       = we can pass query string via URL.
+       = https://example.com/page.php?page=2
+       = after the ? sign, that's the query string.
+         = we can access the value of the query string via $_SERVER key's array.
+11   - try to print_r($_SERVER) anywhere on the index.php file so you can see how the $_SERVER
+       looks like.
+     - print_r($_GET) to look the difference between the $_SERVER
+12   - combine the $sql commands with $_GET.
+13   - to avoid SQL injection create an if statement.
+14   - create a file called database.php to contains the start of the connection to database 
+     - remove the 6 - 7 from index.php and article.php
+     - using require_once to load the database.php
+15   - also remove the header of the html from index.php and article.php
+     - put them into a file called header.php
+16   - create .htaccess files to deny access to includes folder and its files.

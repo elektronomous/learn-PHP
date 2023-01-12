@@ -1,0 +1,48 @@
+nav,
+header {
+  background-color: black;
+  text-align: center;
+}
+h1 {
+  display: inline-flex;
+  color: white;
+  font-size: 24pt;
+  font-family: sans-serif, arial;
+}
+.menu {
+  color: white;
+  font-size: 12pt;
+  text-align: center;
+  font-family: sans-serif, arial;
+  font-weight: bold;
+}
+td {
+  background: black;
+}
+p {
+  color: black;
+  font-size: 12pt;
+  text-align: justify;
+  font-family: sans-serif, arial;
+}
+footer p {
+  color: white;
+  font-size: 9pt;
+  text-align: center;
+  font-family: sans-serif, arial;
+  font-weight: bold;
+}
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: white;
+}
+.menuitem {
+  display: inline-flex;
+  text-align: center;
+  padding-right: 30px;
+}
+footer {
+  background-color: black;
+}

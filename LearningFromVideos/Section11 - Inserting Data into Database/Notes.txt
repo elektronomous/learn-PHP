@@ -1,0 +1,54 @@
+1   - Create a file called new-article.php and insert the header.php, footer.php
+      make a form inside it.
+2   - process the form using the current php file.
+      = After you debug the $_POST, you feel that the user input was right you can insert it into
+        DATABASE
+      = Using the SQL command for inserting:
+
+            INSERT INTO table_name
+                VALUES (value1, value2, value3);
+
+      = How many value are going to be inserted is must match how many column inside the table.
+      = Or you wanna insert into specific column
+
+            INSERT INTO table_name(column1, column2)
+                VALUES (value1, value2);
+        
+      = You wanna insert multiple values into the table:
+
+            INSERT INTO table_name,
+                VALUES (value1, value2),
+                       (value1, value2),
+                       (value1, value2),
+                       ......
+                       (value1, value2);
+      = To avoid sql injection you can use mysqli_escape_string() function
+
+            mysqli_escape_string($connect, $_POST['title"]);
+            mysqli_escape_string($connect, $_POST['content']);
+      
+      = Another way to prevent SQL injection is using the `prepare` statement.
+
+            $sql_query = mysqli_prepare($connect, "SELECT * FROM article WHERE id=?");
+
+      = the `?` is the placeholder, you need to bind something to the placeholder
+
+            mysqli_stmt_bind_param($sql_query, 'i' or 's', $_GET['id']);
+      
+      = type that you pass to bind_param() could be:
+            i for integer
+            d for double/flaot
+            s for string
+            b for variable is a blob and will be sent in packets.
+      
+      = the number of placeholder in your query must match the number of type you pass.
+      = You use mysqli_stmt_execute() to send the command to the database
+
+            if (mysqli_stmt_execute($sql_query)) {
+                  echo "inserted id: " . mysqli_insert_id() . "<br />";
+            } else {
+                  echo mysqli_stmt_error($sql_query);
+            }
+      
+      = Server has a log that you could enable to monitor the command that has been run.
+        goto the documentation of your database.
