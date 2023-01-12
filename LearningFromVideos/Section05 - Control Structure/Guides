@@ -1,6 +1,0 @@
-    = One of the important feature in PHP is conditional structure where you can
-      decide which code should run, and which shouldn't.
-    = Loops(while, foreach, for), switch, & if-else statements are the PHP feature for conditional
-      structure
-
-19 - Create an empty array and evaluate it using empty() function

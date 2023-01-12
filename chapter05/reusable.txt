@@ -1,5 +1,0 @@
-hello there
-<h1>Hello</h1>
-<?php
-echo 'reusable.txt<br />';
-?>
