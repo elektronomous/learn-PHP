@@ -49,6 +49,7 @@ if (isset($_GET['id'])) {
 <?php if ($articles == null): ?>
 <p>No articles found.</p>
 <?php else: ?>
+<a href="index.php">Home</a>
 <ul>
     <!--  -->
     <li>
@@ -57,6 +58,7 @@ if (isset($_GET['id'])) {
             <p><?= htmlspecialchars($articles['content']) ?> </p>
         </article>
         <a href='edit-article.php?id=<?= $articles['id']; ?>'>Edit</a>
+        <a href='delete-article.php?id=<?= $articles['id']; ?>'>Delete</a>
     </li>
 
 </ul>

@@ -39,6 +39,7 @@ if ($results === false) {
             <h2><a href="article.php?id=<?= $article['id']?>"><?= htmlspecialchars($article['title']) ?></a></h2>
             <p><?= htmlspecialchars($article['content']) ?> </p>
         </article>
+        <a href="edit-article.php?id=<?= $article['id']?>">Edit Article</a>
     </li>
     <?php endforeach; ?>
 </ul>
