@@ -1,0 +1,7 @@
+1# create file called session-example.PHP
+2# create a file called set_cookie.php
+3# create a file called index.php
+4# create a file called read_cookie.php
+5# create a folder called subfolder_cookie and create set_cookie_subfolder.php
+6# on 3# create a link to the 5#
+7# create a file called login.php and logout.php

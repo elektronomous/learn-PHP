@@ -1,0 +1,22 @@
+= Each request is unrelated and independent to any previous one because http is protocol
+  that the browser and the server use to exchange data is stateless.
+= To make the statefull we use session.
+= The session is beginning by the server generate a unique identifier session that sent back to the browser
+  along with the requested content.
+  = When you request another page/content, the unique identifier that server has give you will sent back too.
+= In PHP we use session_start() function to create a new session or resume an existing one.
+  = This function make the server to send us a generated unique id and the server also store this unique id
+= Once session is started you can store data in the session that you can access from one request to another.
+= Session data that you've make will store in $_SESSION super global array.
+= When you refresh the session-example.php the session is resume the PHPSESSID (session ID).
+= The session data is writing to the file by default.
+= The session_start() needs to be called before send any content to the browser.
+  = This is because session using cookie, and the cookie data is sent in the headers
+  = You'll get error if you request page, then calling session_start();
+= Cookie are small of string of text a website can store in a browser.
+  = A website can set a value of cookie and later retrieve that value in subsequent requests.
+= Cookie are specific to a particular website. 
+= To set a cookie in PHP, we use set_cookie() function.
+  = After the cookie is set, we could read it back in $_COOKIE.
+= The session by default will be deleted when you close the browser.
+= But you can set the time expire for the session using time() function

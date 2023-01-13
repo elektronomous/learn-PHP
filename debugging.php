@@ -1,8 +1,12 @@
 <?php
+$dateTime = new DateTime();
+
+var_dump($dateTime);
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     var_dump($_POST);
     $datetime = str_replace("T", " ", $_POST['value']);
     var_dump(date_create_from_format("Y-m-d H:i", $datetime));
+
 }
 ?>
 
