@@ -1,0 +1,34 @@
+1   - create form.php on www/Section10 folder
+2   - create process_form.php that will process the form.php
+      = the form you create on 1- will be the query string called "search"
+        with the value that you submitted to on input element
+
+          process_form.php?search=yourValue
+        
+        this process_form.php is file that handle your query string which is the attribute
+        of the <form> element action attribute.
+      = if you dont' specify the action, it submitted itself(the query string will send to
+        current php file). it redisplays the form.
+      = but it's usefull, user can correct erros it has made like missed out filling a form.
+3   - commenting out the 2, and create <input> element for username and password.
+      = when you don't specify the method to send the submitted data or using get method, 
+        the username and password will be shown on the URL bar and by browser, it will be save.
+      = get method will send data using the query string.
+      = post method will send data seperately from the query string.
+4   - try to change the method on <form> element to post method to see how the submitted data
+      are sent.
+      = when you send data using POST method, the data will be sent to the PHP global variable
+        $_POST array.
+5   - add the if statement for $_POST inside the process_form.php
+6   - create its alternative using $_SERVER['REQUEST_METHOD'];
+      = when to use GET method:
+        = you can bookmark the result since the data you've submitted send with the URL
+        = we don't send sensitive data using GET method, because it shows the data on the URL
+        = URL has size limit in some browsers, you use get method to limits the size of the data that you want to send.
+      = when to use POST method:
+        = you can't bookmark the result since the data you've submitted are seperated with the URL
+        = when you sending a sensitive data(sql commands, password, username, so on), use this method.
+        = There's no size limiting in POST method.
+      = the real life of example using GET method is when you send data and the server response back to you as the result
+        (search engine, querying something, so on).
+      = the real life of example using POST method is when you try to insert/update data within the database or textfile.
