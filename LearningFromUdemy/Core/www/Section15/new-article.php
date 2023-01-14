@@ -1,9 +1,15 @@
 <!-- 2 -->
 <?php
 // get the db connection first    
-require "includes/database.php";
-require "includes/article.php";
+require_once "includes/database.php";
+require_once "includes/article.php";
+require_once "includes/auth.php";
 
+session_start();
+
+if (!isLoggedIn()) {
+    die("Unauthorized");
+}
 // 9
 $title = '';
 $content = '';

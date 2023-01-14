@@ -1,8 +1,14 @@
 <!-- 5 -->
 <?php
 
+// if you need to access the global array $_SESSION
+// you need to define session_start() function.
+session_start();            // we use this to work with the current session.
+                            // this will resume the session_data that created when calling session_start inside login.php
+
 // 14
 require_once "includes/database.php";
+require_once "includes/auth.php";
 
 $connect = getDB();
 // 8
@@ -27,10 +33,18 @@ if ($results === false) {
 ?>
 
 <?php require_once "includes/header.php" ?>
-<a href="new-article.php">Enter New Article</a>
 <?php if (empty($articles)): ?>
 <p>No articles found.</p>
 <?php else: ?>
+
+<h1>My Blog</h1>
+<?php if (isLoggedIn()): ?>
+<p>You're logged in. <a href="logout.php">Log out</a></p>
+<a href="new-article.php">Enter New Article</a>
+<?php else: ?>
+<p> You're logout. <a href="login.php">Log in</a></p>
+<?php endif; ?>
+
 <ul>
     <?php foreach($articles as $article): ?>
     <li>

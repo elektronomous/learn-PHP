@@ -6,6 +6,8 @@
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if ($_POST['username'] == "admin" && $_POST['password'] == 'admin') {
+
+        session_regenerate_id(true);
         $_SESSION['is_logged_in'] = true;
         redirectTo("index.php");
     } else {

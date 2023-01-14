@@ -20,3 +20,7 @@
   = After the cookie is set, we could read it back in $_COOKIE.
 = The session by default will be deleted when you close the browser.
 = But you can set the time expire for the session using time() function
+= When loging out, we need to destroy the session and the session's value that has been created
+  when we initiate the session_start() function.
+  = To do this we use session_destroy() function => Destroy all the data in the session.
+= To prevent the session fixation attack, we use session_regenerate_id function

@@ -5,3 +5,4 @@
 5# create a folder called subfolder_cookie and create set_cookie_subfolder.php
 6# on 3# create a link to the 5#
 7# create a file called login.php and logout.php
+8# create a file called auth.php inside the includes folder.
