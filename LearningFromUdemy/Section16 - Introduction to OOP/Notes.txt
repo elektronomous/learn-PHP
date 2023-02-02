@@ -1,0 +1,26 @@
+= A class liek blueprint or template
+= We can use this template to create object of that class.
+= For example:
+    = User class
+    = You can then create a object user, like Dave user, John user, and so on.
+
+= To create an object from class we  use 'new' keyword followed by the class name
+= It's better to create a php file for the class, so it's seperated from the object.
+= When you created a file name that's class inside it, you created the name of the file
+  as the name of the class you will create.
+= Class name begin using Capital Letter.
+= Object of a class have certain attributes/properties.
+= For example:
+    = User object (Dave) has username, and email
+= The public keyword specify how the properties/attributes of the object get access.
+= If you dont specify the value of the property, it sets to NULL
+= You can add the properties via the object you create using the access object operator(->)
+  = This impractical because it introduce a bug.
+= You can define a function inside the class.
+  = It's called method.
+  = You define this function as regular function you created.
+= There's a special value called $this inside the method you created.
+= $this represent the object you currently working on(the object where you calling the method).
+= $this is used to access properties inside method or callign another method inside the method.
+= There is a method which called automatically when we create an object.
+  = This method called __construct used to initialize the properties/attributes inside the class.
