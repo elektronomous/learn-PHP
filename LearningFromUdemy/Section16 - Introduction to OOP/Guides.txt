@@ -1,0 +1,4 @@
+1#  create a file called oo-example.php
+2#  to seperated object from its class, create a filed called item.php 
+    and create a class within it.
+3#  comment out the class inside the 1# 
